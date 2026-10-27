@@ -26,14 +26,14 @@
     <article>
     <h2>What it does</h2>
     <p>Firewall runs a local VPN, but it does not carry your traffic. The tunnel claims one small, reserved range of addresses, and what comes through it is every name your phone looks up. A name that is blocked is answered with an address that goes nowhere, and the connection that follows is refused on the spot. A name that is allowed is resolved for real, encrypted if you asked for that. Your photos, video and downloads never enter the app, so nothing is slowed down and nothing keeps the processor awake.</p>
-    <p>Turn it on with the switch in the green card at the top. The first time, Android asks you to allow the VPN.</p>
+    <p>Turn it on with the switch in the green card at the top. The first time, Android asks you to allow the VPN, and then whether Firewall may send notifications. On a new install every app starts Filtered, with tracker blocking and encrypted lookups on, so apps work as before with trackers stopped.</p>
     <h2>Apps: three modes</h2>
     <dl>
-      <dt>Bypass</dt><dd>Outside the firewall. Untouched, unfiltered, costs nothing.</dd>
-      <dt>Filtered</dt><dd>Its lookups go through the firewall, so encryption, tracker blocking and your domain rules all apply.</dd>
-      <dt>Blocked</dt><dd>No working addresses at all, so it cannot open anything new. A newly installed app starts here.</dd>
+      <dt>Filtered</dt><dd>The app works and trackers are stopped. Its lookups go through the firewall, so encryption, tracker blocking and your domain rules all apply. New apps start here, unless you choose Blocked in Settings under New apps.</dd>
+      <dt>Bypass</dt><dd>The firewall leaves the app alone. Untouched, unfiltered, costs nothing. Use it for an app that has trouble.</dd>
+      <dt>Blocked</dt><dd>The app cannot go online. When it tries, you get a notice with an Allow button, at most once every 12 hours for each app. Turn the notice off in Settings under New apps.</dd>
     </dl>
-    <p>Changes take effect at once, but an app that is already running can hold on to what it opened earlier, so close and reopen it. Bypass all, Filter all and Block all set every app in the list you are looking at. Tap an app's row for its own page: what it looked up, which tracker companies it reached, and whether they got through.</p>
+    <p>Changes take effect at once, but an app that is already running can hold on to what it opened earlier, so close and reopen it. Change all sets every app in the list you are looking at, and Undo puts each one back. Apps that went online lately are at the top. Tap an app's row for its own page: what it looked up, which tracker companies it reached, and whether they got through.</p>
     <h2>Domains: your own rules</h2>
     <p>A block list and an allow list for ordinary websites, separate from the tracker lists. A rule covers the domain and everything under it, so blocking google.com also blocks www.google.com and mail.google.com. The more specific rule wins, so you can block a domain and allow one name inside it. Rules apply at once, for every app set to Filtered.</p>
     <p>Free: 3 rules, block and allow together. Pro: as many as you like, and wildcards. A star anywhere else, like <code>ads.*</code> or <code>*tracker*</code>, matches any text in its place.</p>
@@ -42,7 +42,7 @@
     <h2>Encrypted lookups (DNS over HTTPS)</h2>
     <p>Plain DNS shows your network every site you open. DNS over HTTPS encrypts the lookups. Google is free. With Pro you can pick Cloudflare, Quad9 or AdGuard, or type the address of any provider; Firewall tries a real lookup before it saves it. If the provider cannot be reached, Firewall falls back to the network's own resolver rather than leaving you with no answer.</p>
     <h2>Activity</h2>
-    <p>Lookups seen, how many were stopped, what share were encrypted, and what did the stopping: a tracker list, your own rules, or a blocked app. The chart of the last 24 hours, the names blocked most often, and the full log, searchable, with the app behind every entry. Tap an entry to block that domain, or to always allow it.</p>
+    <p>Lookups seen, how many were stopped, what share were encrypted, and what did the stopping: a tracker list, your own rules, or a blocked app. The chart of the last 24 hours, the names blocked most often, and the full log, searchable, with the app behind every entry. Tap an entry to block that domain, or to always allow it. When the app itself was blocked, the entry offers to allow the app.</p>
     <p>Pro adds the chart of the last 7 days (30 days when you keep a longer history), your busiest hours of the day, the apps that look up the most, the tracker companies behind them, and Export CSV.</p>
     <h2>Alerts (Pro)</h2>
     <dl>
@@ -56,6 +56,7 @@
     <p>The log is kept on your phone for 7 days. With Pro you can keep 30 or 90 days, in Settings under History. Longer history uses more storage.</p>
     <h2>Settings</h2>
     <dl>
+      <dt>New apps</dt><dd>Whether a newly installed app starts Filtered or Blocked, and whether a blocked app that tries to go online brings a notice with Allow.</dd>
       <dt>App Lock</dt><dd>A passcode before the app opens, so your rules cannot be changed by someone holding your phone. Letters, digits and symbols are all allowed.</dd>
       <dt>Weekly summary (Pro)</dt><dd>Once a week, a notification with what the firewall stopped and which tracker companies your apps went for.</dd>
       <dt>Backup and restore</dt><dd>Saves how each app is handled, your domain rules, which tracker lists you downloaded, and your tracker and encryption settings, as plain JSON. Your passcode, your activity and your counters are never included. Restore here or on another phone.</dd>
