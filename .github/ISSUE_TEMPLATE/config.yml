@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: User guide
+    url: https://zanoshky.github.io/firewall-app/
+    about: App modes, domain rules, tracker lists, encrypted lookups, alerts, data caps and common questions.
+  - name: firewall.zanoski.com
+    url: https://firewall.zanoski.com
+    about: The Firewall website, with the privacy policy, terms and contact details.

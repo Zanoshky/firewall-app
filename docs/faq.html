@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Questions · Firewall user guide</title>
+<meta name="description" content="Answers to common questions about Firewall.">
+<meta name="theme-color" content="#0c1116">
+<meta property="og:title" content="Questions · Firewall user guide">
+<meta property="og:description" content="Answers to common questions about Firewall.">
+<link rel="icon" href="img/icon-192.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/icon-192.png" alt="" width="34" height="34"><span>Firewall</span></a>
+    <nav aria-label="Guide pages"><a href="index.html">Home</a><a href="guide.html">Guide</a><a href="faq.html" aria-current="page">Questions</a><a href="report.html">Report a bug</a></nav>
+  </div>
+</header>
+<main id="main" class="page">
+  <div class="wrap">
+    <p class="kicker">Questions</p>
+    <h1>Questions and fixes</h1>
+    <article>
+    <h2>An app or a site stopped working</h2>
+    <p>Open Activity and look for its lookups marked as stopped. Tap the entry and pick always allow, or set the app to Filtered or Bypass on the Apps tab. If a tracker list blocked a name the app needs, an allow rule on the Domains tab undoes it.</p>
+    <h2>I blocked an app, but it still works</h2>
+    <p>Close it and open it again: an app that was already running can hold on to what it opened earlier. An app that connects straight to an address, without looking up a name, cannot be stopped by a firewall that works on names.</p>
+    <h2>It says Private DNS is in the way</h2>
+    <p>With Private DNS set to a provider, Android sends every lookup straight there and the firewall never sees them. Tap the warning: Firewall can switch Private DNS to Automatic while it runs and put your setting back when you turn it off, or you can set it to Automatic or Off yourself under Network and internet. Turn on DNS over HTTPS in Firewall to keep lookups encrypted.</p>
+    <h2>The firewall turned itself off</h2>
+    <p>Android allows one VPN at a time. Starting another VPN app stops Firewall; switch it back on when you are done.</p>
+    <h2>Does it drain the battery?</h2>
+    <p>Very little. Only the names your phone looks up pass through the app, never your traffic itself.</p>
+    <h2>The data cap shows no data used</h2>
+    <p>Firewall needs Usage access to read Android's data counts. Open the app's page, tap the cap row and follow the button to Usage access, then turn Firewall on in that list. Caps count mobile data only.</p>
+    <h2>I bought Pro on another phone</h2>
+    <p>Sign in to Google Play with the same account and open Firewall. Pro comes back on its own.</p>
+    <h2>Does Firewall send my data anywhere?</h2>
+    <p>No. There is no account, no analytics and no server of ours. Lookups you allow go to the DNS provider you chose, as they would without the app. See the <a href="https://firewall.zanoski.com/privacy">privacy policy</a>.</p>
+    </article>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Guide text and images are shared under CC BY 4.0. The Firewall app itself is proprietary. Made by Marko Zanoski.</span>
+    <nav aria-label="Footer"><a href="https://play.google.com/store/apps/details?id=com.zanoshky.firewall">Google Play</a><a href="https://firewall.zanoski.com">firewall.zanoski.com</a><a href="https://github.com/Zanoshky/firewall-app/issues">Issues</a><a href="https://firewall.zanoski.com/privacy">Privacy</a><a href="https://firewall.zanoski.com/terms">Terms</a></nav>
+  </div>
+</footer>
+</body>
+</html>

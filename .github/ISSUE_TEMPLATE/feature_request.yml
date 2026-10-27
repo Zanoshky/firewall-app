@@ -1,0 +1,49 @@
+name: Feature request
+description: An idea for something Firewall could do.
+title: "[idea] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What you want
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: What would it help you do? A real example helps.
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: "Which part of the app?"
+      options:
+        - Apps tab, Bypass, Filtered or Blocked
+        - an app's own page
+        - Activity or the log
+        - Domains, my own rules
+        - Trackers or tracker lists
+        - DNS over HTTPS
+        - Private DNS warning
+        - new app or tracker company alerts
+        - daily mobile data cap
+        - App Lock
+        - backup and restore
+        - weekly summary
+        - Quick Settings tile or widget
+        - turning on, the VPN or after a reboot
+        - buying or restoring Pro
+        - settings
+        - other
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I searched the open issues and this idea is not there yet.
+          required: true

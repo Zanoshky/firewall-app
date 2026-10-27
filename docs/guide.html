@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guide · Firewall user guide</title>
+<meta name="description" content="How to use Firewall: app modes, domain rules, tracker lists, encrypted lookups, activity, alerts, data caps and settings.">
+<meta name="theme-color" content="#0c1116">
+<meta property="og:title" content="Guide · Firewall user guide">
+<meta property="og:description" content="How to use Firewall: app modes, domain rules, tracker lists, encrypted lookups, activity, alerts, data caps and settings.">
+<link rel="icon" href="img/icon-192.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/icon-192.png" alt="" width="34" height="34"><span>Firewall</span></a>
+    <nav aria-label="Guide pages"><a href="index.html">Home</a><a href="guide.html" aria-current="page">Guide</a><a href="faq.html">Questions</a><a href="report.html">Report a bug</a></nav>
+  </div>
+</header>
+<main id="main" class="page">
+  <div class="wrap">
+    <p class="kicker">Guide</p>
+    <h1>How Firewall works</h1>
+    <article>
+    <h2>What it does</h2>
+    <p>Firewall runs a local VPN, but it does not carry your traffic. The tunnel claims one small, reserved range of addresses, and what comes through it is every name your phone looks up. A name that is blocked is answered with an address that goes nowhere, and the connection that follows is refused on the spot. A name that is allowed is resolved for real, encrypted if you asked for that. Your photos, video and downloads never enter the app, so nothing is slowed down and nothing keeps the processor awake.</p>
+    <p>Turn it on with the switch in the green card at the top. The first time, Android asks you to allow the VPN.</p>
+    <h2>Apps: three modes</h2>
+    <dl>
+      <dt>Bypass</dt><dd>Outside the firewall. Untouched, unfiltered, costs nothing.</dd>
+      <dt>Filtered</dt><dd>Its lookups go through the firewall, so encryption, tracker blocking and your domain rules all apply.</dd>
+      <dt>Blocked</dt><dd>No working addresses at all, so it cannot open anything new. A newly installed app starts here.</dd>
+    </dl>
+    <p>Changes take effect at once, but an app that is already running can hold on to what it opened earlier, so close and reopen it. Bypass all, Filter all and Block all set every app in the list you are looking at. Tap an app's row for its own page: what it looked up, which tracker companies it reached, and whether they got through.</p>
+    <h2>Domains: your own rules</h2>
+    <p>A block list and an allow list for ordinary websites, separate from the tracker lists. A rule covers the domain and everything under it, so blocking google.com also blocks www.google.com and mail.google.com. The more specific rule wins, so you can block a domain and allow one name inside it. Rules apply at once, for every app set to Filtered.</p>
+    <p>Free: 3 rules, block and allow together. Pro: as many as you like, and wildcards. A star anywhere else, like <code>ads.*</code> or <code>*tracker*</code>, matches any text in its place.</p>
+    <h2>Trackers</h2>
+    <p>Every lookup is checked against known tracker, ad and fingerprinting domains. The bundled list works out of the box. With Pro you can add the community lists (HaGeZi, OISD, 1Hosts, Steven Black, AdGuard), refresh them, or add your own list by its https link: a hosts file, a plain list of domains, or an adblock style list. Lists are downloaded once and kept on the phone; the tab shows how many names they hold and the memory they take. Anything a list gets wrong can be undone on the Domains tab with an allow rule.</p>
+    <h2>Encrypted lookups (DNS over HTTPS)</h2>
+    <p>Plain DNS shows your network every site you open. DNS over HTTPS encrypts the lookups. Google is free. With Pro you can pick Cloudflare, Quad9 or AdGuard, or type the address of any provider; Firewall tries a real lookup before it saves it. If the provider cannot be reached, Firewall falls back to the network's own resolver rather than leaving you with no answer.</p>
+    <h2>Activity</h2>
+    <p>Lookups seen, how many were stopped, what share were encrypted, and what did the stopping: a tracker list, your own rules, or a blocked app. The chart of the last 24 hours, the names blocked most often, and the full log, searchable, with the app behind every entry. Tap an entry to block that domain, or to always allow it.</p>
+    <p>Pro adds the chart of the last 7 days (30 days when you keep a longer history), your busiest hours of the day, the apps that look up the most, the tracker companies behind them, and Export CSV.</p>
+    <h2>Alerts (Pro)</h2>
+    <dl>
+      <dt>New apps</dt><dd>Tells you when a newly installed app goes online, so you can allow or block it from the notification. With App Lock on, the notification only opens the app.</dd>
+      <dt>New tracker companies</dt><dd>Tells you when an app reaches a tracker company it never reached before. An app the firewall has not seen before gets a day to show its usual companies quietly.</dd>
+    </dl>
+    <p>Turn them on in Settings, under Alerts.</p>
+    <h2>Daily mobile data cap (Pro)</h2>
+    <p>Open an app's page from the Apps tab and tap Daily mobile data cap. When the app has used that much mobile data today, its new connections are stopped on mobile data until midnight. Wi-Fi still works. Android counts the data, so Firewall needs Usage access; the app takes you to that screen. Caps need Android 10 or newer, and a cap cannot stop an app set to Bypass.</p>
+    <h2>History</h2>
+    <p>The log is kept on your phone for 7 days. With Pro you can keep 30 or 90 days, in Settings under History. Longer history uses more storage.</p>
+    <h2>Settings</h2>
+    <dl>
+      <dt>App Lock</dt><dd>A passcode before the app opens, so your rules cannot be changed by someone holding your phone. Letters, digits and symbols are all allowed.</dd>
+      <dt>Weekly summary (Pro)</dt><dd>Once a week, a notification with what the firewall stopped and which tracker companies your apps went for.</dd>
+      <dt>Backup and restore</dt><dd>Saves how each app is handled, your domain rules, which tracker lists you downloaded, and your tracker and encryption settings, as plain JSON. Your passcode, your activity and your counters are never included. Restore here or on another phone.</dd>
+    </dl>
+    <h2>Always on</h2>
+    <p>Firewall starts again after a reboot and after an app update. The Quick Settings tile switches it from the notification shade, and respects App Lock. The Firewall status widget shows whether protection is on and what was stopped today.</p>
+    <h2>Firewall Pro</h2>
+    <p>One payment on Google Play, no subscription, no account. It stays with your Google account. If you used Firewall before Pro existed, Pro is already yours, for free.</p>
+    </article>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Guide text and images are shared under CC BY 4.0. The Firewall app itself is proprietary. Made by Marko Zanoski.</span>
+    <nav aria-label="Footer"><a href="https://play.google.com/store/apps/details?id=com.zanoshky.firewall">Google Play</a><a href="https://firewall.zanoski.com">firewall.zanoski.com</a><a href="https://github.com/Zanoshky/firewall-app/issues">Issues</a><a href="https://firewall.zanoski.com/privacy">Privacy</a><a href="https://firewall.zanoski.com/terms">Terms</a></nav>
+  </div>
+</footer>
+</body>
+</html>
