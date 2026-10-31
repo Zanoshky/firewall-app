@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/img/screen-apps.webp" width="280" alt="The app list with Demo Media set to Blocked and First Flow set to Filtered, each row offering Bypass, Filtered and Blocked.">
+  <img src="docs/img/screen-apps.webp" width="280" alt="The app list with lookups per app: Chrome, Calendar and Phosphor Filtered, Vinyl Blocked, and the bar at the bottom ending in Settings.">
 </p>
 
 This repo is the public home for Firewall users: the user guide, bug reports and feature requests. The app's source is not here.
@@ -23,8 +23,8 @@ This repo is the public home for Firewall users: the user guide, bug reports and
 
 1. Install Firewall from Google Play.
 2. Turn it on with the switch at the top and allow the VPN when Android asks.
-3. On the Apps tab, set each app to Bypass, Filtered or Blocked.
-4. Open Activity to see what your phone looks up and what was stopped.
+3. On the Apps tab, set each app to Not filtered, Filtered or Blocked.
+4. Open Activity to see what your phone looks up and what was stopped. Settings, the last button in the bar, holds tracker lists, your domain rules and the rest.
 
 Read the full [user guide](https://zanoshky.github.io/firewall-app/guide.html) and the [questions and fixes](https://zanoshky.github.io/firewall-app/faq.html).
 
