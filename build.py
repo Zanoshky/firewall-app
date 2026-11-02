@@ -166,7 +166,7 @@ REPORT = f'''    <p class="kicker">Report</p>
     </dl>
     <p>Issues on GitHub are public. Your activity log shows which sites you visit, so crop screenshots and leave out anything private.</p>
     <h2>Other ways</h2>
-    <p>Prefer not to use GitHub? Write to marko@zanoski.com (<a href="mailto:marko@zanoski.com">write an email</a>).</p>
+    <p>Prefer not to use GitHub? Write to support@zanoski.com (<a href="mailto:support@zanoski.com">write an email</a>).</p>
     </article>'''
 
 bad = 0
