@@ -96,10 +96,14 @@ GUIDE = '''    <p class="kicker">Guide</p>
     <p>Turn them on in Settings, under Alerts and weekly summary.</p>
     <h2>Daily mobile data cap (Pro)</h2>
     <p>Open an app's page from the Apps tab and tap Daily mobile data cap. When the app has used that much mobile data today, its new connections are stopped on mobile data until midnight. Wi-Fi still works. Android counts the data, so Firewall needs Usage access; the app takes you to that screen. Caps need Android 10 or newer, and a cap cannot stop an app set to Not filtered.</p>
+    <h2>Kill switch (Pro)</h2>
+    <p>In Settings, under Protection. Normally Firewall stops a Blocked app by refusing every name it looks up. A few apps get past that by connecting straight to an address. With the Kill switch on, Android itself cuts a Blocked app off, so it cannot reach the internet at all, and a connection it already had stops at once. Filtered and Not filtered apps are not touched, and it costs no battery.</p>
+    <p>It needs Android 13 or newer and Shizuku, a free helper app. Android only lets its own system tools switch another app's internet off; Shizuku lends Firewall that one power without rooting the phone. Turn the switch on and the page shows one step at a time: get Shizuku, start it, allow Firewall. After a phone restart, open Shizuku and tap Start once; Firewall reminds you. Until then Blocked works the normal way.</p>
+    <p>Turning the Kill switch or the firewall off gives every app its connection back. A few parts of the phone are never cut off this way: Firewall and Shizuku, the network stack, calls, Settings, the launcher and Google Play services. An app that came with the phone is only cut off if you blocked it yourself. Shizuku also lets Firewall handle strict Private DNS without the adb command.</p>
     <h2>History</h2>
     <p>The log is kept on your phone for 7 days. With Pro you can keep 30 or 90 days, in Settings under History. Longer history uses more storage.</p>
     <h2>Settings</h2>
-    <p>Settings is the last button in the bar. It lists the pages below in groups: Look, Protection (Encrypted lookups, Tracker lists, Your domain rules, New apps), Lock, alerts and backup, Pro, and App (Privacy, Help and feedback), then Support the developer and About.</p>
+    <p>Settings is the last button in the bar. It lists the pages below in groups: Look, Protection (Encrypted lookups, Tracker lists, Your domain rules, New apps, Kill switch), Lock, alerts and backup, Pro, and App (Privacy, Help and feedback), then Support the developer and About.</p>
     <dl>
       <dt>Look</dt><dd>Follow the phone, Light, Dark or Black. Black uses true black grounds, which save power on OLED screens.</dd>
       <dt>New apps</dt><dd>Whether a newly installed app starts Filtered or Blocked, and whether a blocked app that tries to go online brings a notice with Allow.</dd>
@@ -123,7 +127,7 @@ FAQ = '''    <p class="kicker">Questions</p>
     <h2>An app or a site stopped working</h2>
     <p>Open Activity and look for its lookups marked as stopped. If the app itself is blocked, tap the entry and pick Allow, or tap Allow on the notice. Otherwise pick always allow for that name, or set the app to Filtered or Not filtered on the Apps tab. If a tracker list blocked a name the app needs, an allow rule in Settings, Your domain rules undoes it.</p>
     <h2>I blocked an app, but it still works</h2>
-    <p>Close it and open it again: an app that was already running can hold on to what it opened earlier. An app that connects straight to an address, without looking up a name, cannot be stopped by a firewall that works on names.</p>
+    <p>Close it and open it again: an app that was already running can hold on to what it opened earlier. An app that connects straight to an address, without looking up a name, cannot be stopped by a firewall that works on names. With Pro, the Kill switch stops those too (Android 13 or newer, with Shizuku).</p>
     <h2>It says Private DNS is in the way</h2>
     <p>With Private DNS set to a provider, Android sends every lookup straight there and the firewall never sees them. Tap the warning: Firewall can switch Private DNS to Automatic while it runs and put your setting back when you turn it off, or you can set it to Automatic or Off yourself under Network and internet. Turn on DNS over HTTPS in Firewall to keep lookups encrypted.</p>
     <h2>The firewall turned itself off</h2>
