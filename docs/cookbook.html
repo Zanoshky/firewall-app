@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cookbook · Firewall user guide</title>
+<meta name="description" content="Short Firewall recipes: stop trackers, keep an app off mobile data, safe search, quiet nights, data caps and more.">
+<meta name="theme-color" content="#0c1116">
+<meta property="og:title" content="Cookbook · Firewall user guide">
+<meta property="og:description" content="Short Firewall recipes: stop trackers, keep an app off mobile data, safe search, quiet nights, data caps and more.">
+<link rel="icon" href="img/icon-192.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/icon-192.png" alt="" width="34" height="34"><span>Firewall</span></a>
+    <nav aria-label="Guide pages"><a href="index.html">Home</a><a href="guide.html">Guide</a><a href="cookbook.html" aria-current="page">Cookbook</a><a href="runbook.html">Runbook</a><a href="faq.html">Questions</a><a href="report.html">Report a bug</a></nav>
+  </div>
+</header>
+<main id="main" class="page">
+  <div class="wrap">
+    <p class="kicker">Cookbook</p>
+    <h1>Short recipes</h1>
+    <p>A few taps each. Every recipe starts from the bar at the bottom: Home, Apps, Activity and Settings.</p>
+    <article>
+    <h2>Stop trackers, keep the app working</h2>
+    <ol><li>Open Apps and tap the app.</li><li>Pick Filtered.</li><li>Close the app and open it again.</li></ol>
+    <p>It works as before, and Activity shows each tracker it tried to reach.</p>
+    <h2>Keep an app off mobile data</h2>
+    <ol><li>Open Apps and tap the app.</li><li>Under Can connect on, tap Mobile data to block it there.</li></ol>
+    <p>The list then says Wi-Fi only for that app. Roaming counts as mobile data too.</p>
+    <h2>Block a site in every app</h2>
+    <ol><li>Open Settings, Your domain rules.</li><li>Add the domain to the block list, like example.com.</li></ol>
+    <p>It covers www.example.com and every other name under it, for every app set to Filtered.</p>
+    <h2>Safe search for a child's phone</h2>
+    <ol><li>Open Settings, Encrypted lookups.</li><li>Turn on Forced SafeSearch.</li><li>In the browser, turn off its own Secure DNS.</li><li>Turn on App Lock in Settings, so nobody changes it.</li></ol>
+    <h2>Quiet nights</h2>
+    <ol><li>Open Settings, Screen off.</li><li>Turn on Block while the screen is off.</li><li>Under Stay online, add the apps you want to hear from, like your messenger.</li></ol>
+    <p>It starts a minute after the screen goes off, and calls, messages and Google Play services keep working.</p>
+    <h2>A daily mobile data cap (Pro)</h2>
+    <ol><li>Open Apps and tap the app.</li><li>Tap Daily mobile data cap and pick an amount.</li><li>Allow Usage access when Firewall asks.</li></ol>
+    <h2>Cut an app off completely (Pro)</h2>
+    <ol><li>Set the app to Blocked.</li><li>Open Settings, Kill switch, and follow the steps: get Shizuku, start it, allow Firewall.</li></ol>
+    <p>Needs Android 13 or newer. After a restart, open Shizuku and tap Start once.</p>
+    <h2>Your rules on a new phone</h2>
+    <ol><li>On the old phone, Settings, Backup and restore, save a backup.</li><li>Copy the file to the new phone.</li><li>On the new phone, Backup and restore, Restore from file.</li></ol>
+    <p>Your passcode and your activity are never in the backup.</p>
+    <h2>Support Firewall monthly</h2>
+    <ol><li>Open Settings and scroll to Support the developer.</li><li>Tap Support And Live API.</li><li>Google Play shows the price and how to cancel. Confirm there.</li></ol>
+    <p>Optional, and it unlocks nothing. Tap the row again to manage or cancel it.</p>
+    </article>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Guide text and images are shared under CC BY 4.0. The Firewall app itself is proprietary. Made by Marko Zanoski.</span>
+    <nav aria-label="Footer"><a href="https://play.google.com/store/apps/details?id=com.zanoshky.firewall">Google Play</a><a href="https://firewall.zanoski.com">firewall.zanoski.com</a><a href="https://github.com/Zanoshky/firewall-app/issues">Issues</a><a href="https://firewall.zanoski.com/privacy">Privacy</a><a href="https://firewall.zanoski.com/terms">Terms</a></nav>
+  </div>
+</footer>
+</body>
+</html>

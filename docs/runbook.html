@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Runbook · Firewall user guide</title>
+<meta name="description" content="When something in Firewall goes wrong: a broken app, the VPN turning off, an empty Activity, the Kill switch, Pro and the subscription.">
+<meta name="theme-color" content="#0c1116">
+<meta property="og:title" content="Runbook · Firewall user guide">
+<meta property="og:description" content="When something in Firewall goes wrong: a broken app, the VPN turning off, an empty Activity, the Kill switch, Pro and the subscription.">
+<link rel="icon" href="img/icon-192.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/icon-192.png" alt="" width="34" height="34"><span>Firewall</span></a>
+    <nav aria-label="Guide pages"><a href="index.html">Home</a><a href="guide.html">Guide</a><a href="cookbook.html">Cookbook</a><a href="runbook.html" aria-current="page">Runbook</a><a href="faq.html">Questions</a><a href="report.html">Report a bug</a></nav>
+  </div>
+</header>
+<main id="main" class="page">
+  <div class="wrap">
+    <p class="kicker">Runbook</p>
+    <h1>When something goes wrong</h1>
+    <p>What you see, why it happens, and the taps that fix it. More answers are in the <a href="faq.html">questions</a>.</p>
+    <article>
+    <h2>An app or a site stopped working</h2>
+    <p>Something it needs was stopped: the app itself, a tracker list, or one of your rules.</p>
+    <ol><li>Open Activity and find its lookups marked as stopped.</li><li>Tap one and pick Always allow, or Allow for a blocked app.</li><li>Still broken? Set the app to Not filtered on the Apps tab, then close and reopen it.</li></ol>
+    <h2>Firewall turned itself off</h2>
+    <p>Android allows one VPN at a time, so another VPN app stops Firewall. Some phones also stop apps in the background to save battery.</p>
+    <ol><li>Switch it back on from Home or the Quick Settings tile.</li><li>Android settings, Apps, Firewall, Battery: pick Unrestricted.</li><li>Network and internet, VPN, Firewall: turn on Always on VPN.</li></ol>
+    <h2>Nothing shows in Activity</h2>
+    <p>With Private DNS set to a provider, Android sends lookups straight there and Firewall never sees them.</p>
+    <ol><li>Tap the Private DNS warning on Home.</li><li>Let Firewall switch it to Automatic while it runs, or set it yourself under Network and internet.</li></ol>
+    <h2>A blocked app still gets online</h2>
+    <p>It was already connected, or it connects straight to an address without a lookup.</p>
+    <ol><li>Close the app and open it again.</li><li>With Pro, turn on the Kill switch (Android 13 or newer, with Shizuku).</li></ol>
+    <h2>The Kill switch stopped after a restart</h2>
+    <p>Shizuku has to be started again after every restart; Firewall reminds you.</p>
+    <ol><li>Open Shizuku and tap Start.</li></ol>
+    <p>Until then, Blocked works the normal way.</p>
+    <h2>Data used or a cap shows nothing</h2>
+    <p>Firewall reads Android's own data counts, which need Usage access.</p>
+    <ol><li>Open the app's page and tap Allow usage access.</li><li>Turn Firewall on in Android's list.</li></ol>
+    <h2>A tracker list will not download</h2>
+    <p>The list's server is slow or gone, or the phone is short on memory for very big lists.</p>
+    <ol><li>Open Settings, Tracker lists, and tap Refresh on that list.</li><li>Still failing? Remove one of the biggest lists; the page shows the memory each takes.</li></ol>
+    <h2>Forgot the App Lock passcode</h2>
+    <p>The passcode is kept only on the phone, and nobody, us included, can read it.</p>
+    <ol><li>Android settings, Apps, Firewall, Storage, Clear storage.</li><li>Open Firewall and restore your last backup.</li></ol>
+    <h2>Pro is missing on a new phone</h2>
+    <ol><li>Sign in to Google Play with the account that bought it.</li><li>Open Firewall. Pro comes back on its own.</li></ol>
+    <h2>The subscription will not start</h2>
+    <p>Support And Live API runs through the Google Play app. A copy not installed from Google Play, an old Play Store, or no account on the phone cannot reach it.</p>
+    <ol><li>Open the Play Store once and check you are signed in.</li><li>Update Firewall and the Play Store.</li><li>Try the row again in Settings, under Support the developer.</li></ol>
+    <p>To cancel: tap the same row, or Play Store, your profile, Payments and subscriptions.</p>
+    </article>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>Guide text and images are shared under CC BY 4.0. The Firewall app itself is proprietary. Made by Marko Zanoski.</span>
+    <nav aria-label="Footer"><a href="https://play.google.com/store/apps/details?id=com.zanoshky.firewall">Google Play</a><a href="https://firewall.zanoski.com">firewall.zanoski.com</a><a href="https://github.com/Zanoshky/firewall-app/issues">Issues</a><a href="https://firewall.zanoski.com/privacy">Privacy</a><a href="https://firewall.zanoski.com/terms">Terms</a></nav>
+  </div>
+</footer>
+</body>
+</html>

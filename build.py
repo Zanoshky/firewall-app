@@ -6,7 +6,7 @@ ROOT = pathlib.Path(__file__).parent / 'docs'
 PLAY = 'https://play.google.com/store/apps/details?id=com.zanoshky.firewall'
 SITE = 'https://firewall.zanoski.com'
 REPO = 'https://github.com/Zanoshky/firewall-app'
-PAGES = [('index.html', 'Home'), ('guide.html', 'Guide'), ('faq.html', 'Questions'), ('report.html', 'Report a bug')]
+PAGES = [('index.html', 'Home'), ('guide.html', 'Guide'), ('cookbook.html', 'Cookbook'), ('runbook.html', 'Runbook'), ('faq.html', 'Questions'), ('report.html', 'Report a bug')]
 
 def shell(file, title, desc, body):
     nav = ''.join(f'<a href="{f}"{" aria-current=\"page\"" if f == file else ""}>{n}</a>' for f, n in PAGES)
@@ -85,6 +85,8 @@ GUIDE = '''    <p class="kicker">Guide</p>
     <p>In Settings, under Protection. Every lookup is checked against known tracker, ad and fingerprinting domains. The bundled list works out of the box. With Pro you can add the community lists (HaGeZi, OISD, 1Hosts, Steven Black, AdGuard), refresh them, or add your own list by its https link: a hosts file, a plain list of domains, or an adblock style list. Lists are downloaded once and kept on the phone; the page shows how many names they hold and the memory they take. Anything a list gets wrong can be undone with an allow rule in Your domain rules.</p>
     <h2>Encrypted lookups (DNS over HTTPS)</h2>
     <p>In Settings, under Protection. Plain DNS shows your network every site you open. DNS over HTTPS encrypts the lookups. Google is free. With Pro you can pick Cloudflare, Quad9 or AdGuard, or type the address of any provider; Firewall tries a real lookup before it saves it. If the provider cannot be reached, Firewall falls back to the network's own resolver rather than leaving you with no answer.</p>
+    <h2>Forced SafeSearch</h2>
+    <p>In Settings, under Encrypted lookups. Google, Bing and DuckDuckGo always show their SafeSearch results, and YouTube runs in Restricted Mode, in every app the firewall filters. A browser with its own Secure DNS turned on asks its own server and gets past this, so turn that off in the browser too. Free.</p>
     <h2>Activity</h2>
     <p>Lookups seen, how many were stopped, what share were encrypted, and what did the stopping: a tracker list, your own rules, or a blocked app. The chart of the last 24 hours, the names blocked most often, and the full log, searchable, with the app behind every entry. Tap an entry to block that domain, or to always allow it. When the app itself was blocked, the entry offers to allow the app.</p>
     <p>Pro adds the chart of the last 7 days (30 days when you keep a longer history), your busiest hours of the day, the apps that look up the most, the tracker companies behind them, and Export CSV.</p>
@@ -118,11 +120,13 @@ GUIDE = '''    <p class="kicker">Guide</p>
       <dt>Backup and restore</dt><dd>Saves how each app is handled, your domain rules, which tracker lists you downloaded, and your tracker and encryption settings, as plain JSON. Your passcode, your activity and your counters are never included. Restore here or on another phone.</dd>
       <dt>Privacy</dt><dd>Its own page. Firewall's promises (no ads, no tracking, no analytics, no account, no AI), then every permission it asks for and why. Location, contacts, camera and microphone are never asked for.</dd>
       <dt>Help and feedback</dt><dd>Its own page, with links to this guide and to the form to report a bug or ask for a feature.</dd>
-      <dt>Support the developer</dt><dd>If Firewall helps you, you can support it: Buy me a coffee opens the page in your browser.</dd>
+      <dt>Support the developer</dt><dd>If Firewall helps you, you can support it: Buy me a coffee opens the page in your browser. Support And Live API is an optional subscription, 0.99 a month through Google Play, that pays for bug fixes and fresh tracker lists. It unlocks nothing, and nothing is locked without it. Once you subscribe, the row says thank you and opens Google Play, where you cancel any time.</dd>
       <dt>About</dt><dd>The version you have, and that Firewall has no server of its own.</dd>
     </dl>
     <h2>Always on</h2>
     <p>Firewall starts again after a reboot and after an app update. The Quick Settings tile switches it from the notification shade, and respects App Lock. The Firewall status widget shows whether protection is on and what was stopped today.</p>
+    <h2>Languages, TV and big screens</h2>
+    <p>Firewall speaks English, German, Spanish, French, Hindi, Indonesian, Japanese, Korean, Brazilian Portuguese, Russian and Turkish. It follows the phone, or pick a language for Firewall alone in Android's settings, Apps, Firewall, Language. It runs on Android TV and Google TV with the remote, and uses two columns on a tablet.</p>
     <h2>Firewall Pro</h2>
     <p>One payment on Google Play, no subscription, no account. It stays with your Google account. If you used Firewall before Pro existed, Pro is already yours, for free.</p>
     </article>'''
@@ -149,6 +153,74 @@ FAQ = '''    <p class="kicker">Questions</p>
     <p>An optional subscription, 0.99 USD or EUR a month, for those who want to help more. It pays for bug fixes and fresh tracker lists. It unlocks nothing, and nothing is locked without it. Find it in Settings, under Support the developer. Cancel any time in Google Play.</p>
     <h2>Does Firewall send my data anywhere?</h2>
     <p>No. There is no account, no analytics and no server of ours. Lookups you allow go to the DNS provider you chose, as they would without the app. See the <a href="https://firewall.zanoski.com/privacy">privacy policy</a>.</p>
+    </article>'''
+
+COOKBOOK = '''    <p class="kicker">Cookbook</p>
+    <h1>Short recipes</h1>
+    <p>A few taps each. Every recipe starts from the bar at the bottom: Home, Apps, Activity and Settings.</p>
+    <article>
+    <h2>Stop trackers, keep the app working</h2>
+    <ol><li>Open Apps and tap the app.</li><li>Pick Filtered.</li><li>Close the app and open it again.</li></ol>
+    <p>It works as before, and Activity shows each tracker it tried to reach.</p>
+    <h2>Keep an app off mobile data</h2>
+    <ol><li>Open Apps and tap the app.</li><li>Under Can connect on, tap Mobile data to block it there.</li></ol>
+    <p>The list then says Wi-Fi only for that app. Roaming counts as mobile data too.</p>
+    <h2>Block a site in every app</h2>
+    <ol><li>Open Settings, Your domain rules.</li><li>Add the domain to the block list, like example.com.</li></ol>
+    <p>It covers www.example.com and every other name under it, for every app set to Filtered.</p>
+    <h2>Safe search for a child's phone</h2>
+    <ol><li>Open Settings, Encrypted lookups.</li><li>Turn on Forced SafeSearch.</li><li>In the browser, turn off its own Secure DNS.</li><li>Turn on App Lock in Settings, so nobody changes it.</li></ol>
+    <h2>Quiet nights</h2>
+    <ol><li>Open Settings, Screen off.</li><li>Turn on Block while the screen is off.</li><li>Under Stay online, add the apps you want to hear from, like your messenger.</li></ol>
+    <p>It starts a minute after the screen goes off, and calls, messages and Google Play services keep working.</p>
+    <h2>A daily mobile data cap (Pro)</h2>
+    <ol><li>Open Apps and tap the app.</li><li>Tap Daily mobile data cap and pick an amount.</li><li>Allow Usage access when Firewall asks.</li></ol>
+    <h2>Cut an app off completely (Pro)</h2>
+    <ol><li>Set the app to Blocked.</li><li>Open Settings, Kill switch, and follow the steps: get Shizuku, start it, allow Firewall.</li></ol>
+    <p>Needs Android 13 or newer. After a restart, open Shizuku and tap Start once.</p>
+    <h2>Your rules on a new phone</h2>
+    <ol><li>On the old phone, Settings, Backup and restore, save a backup.</li><li>Copy the file to the new phone.</li><li>On the new phone, Backup and restore, Restore from file.</li></ol>
+    <p>Your passcode and your activity are never in the backup.</p>
+    <h2>Support Firewall monthly</h2>
+    <ol><li>Open Settings and scroll to Support the developer.</li><li>Tap Support And Live API.</li><li>Google Play shows the price and how to cancel. Confirm there.</li></ol>
+    <p>Optional, and it unlocks nothing. Tap the row again to manage or cancel it.</p>
+    </article>'''
+
+RUNBOOK = '''    <p class="kicker">Runbook</p>
+    <h1>When something goes wrong</h1>
+    <p>What you see, why it happens, and the taps that fix it. More answers are in the <a href="faq.html">questions</a>.</p>
+    <article>
+    <h2>An app or a site stopped working</h2>
+    <p>Something it needs was stopped: the app itself, a tracker list, or one of your rules.</p>
+    <ol><li>Open Activity and find its lookups marked as stopped.</li><li>Tap one and pick Always allow, or Allow for a blocked app.</li><li>Still broken? Set the app to Not filtered on the Apps tab, then close and reopen it.</li></ol>
+    <h2>Firewall turned itself off</h2>
+    <p>Android allows one VPN at a time, so another VPN app stops Firewall. Some phones also stop apps in the background to save battery.</p>
+    <ol><li>Switch it back on from Home or the Quick Settings tile.</li><li>Android settings, Apps, Firewall, Battery: pick Unrestricted.</li><li>Network and internet, VPN, Firewall: turn on Always on VPN.</li></ol>
+    <h2>Nothing shows in Activity</h2>
+    <p>With Private DNS set to a provider, Android sends lookups straight there and Firewall never sees them.</p>
+    <ol><li>Tap the Private DNS warning on Home.</li><li>Let Firewall switch it to Automatic while it runs, or set it yourself under Network and internet.</li></ol>
+    <h2>A blocked app still gets online</h2>
+    <p>It was already connected, or it connects straight to an address without a lookup.</p>
+    <ol><li>Close the app and open it again.</li><li>With Pro, turn on the Kill switch (Android 13 or newer, with Shizuku).</li></ol>
+    <h2>The Kill switch stopped after a restart</h2>
+    <p>Shizuku has to be started again after every restart; Firewall reminds you.</p>
+    <ol><li>Open Shizuku and tap Start.</li></ol>
+    <p>Until then, Blocked works the normal way.</p>
+    <h2>Data used or a cap shows nothing</h2>
+    <p>Firewall reads Android's own data counts, which need Usage access.</p>
+    <ol><li>Open the app's page and tap Allow usage access.</li><li>Turn Firewall on in Android's list.</li></ol>
+    <h2>A tracker list will not download</h2>
+    <p>The list's server is slow or gone, or the phone is short on memory for very big lists.</p>
+    <ol><li>Open Settings, Tracker lists, and tap Refresh on that list.</li><li>Still failing? Remove one of the biggest lists; the page shows the memory each takes.</li></ol>
+    <h2>Forgot the App Lock passcode</h2>
+    <p>The passcode is kept only on the phone, and nobody, us included, can read it.</p>
+    <ol><li>Android settings, Apps, Firewall, Storage, Clear storage.</li><li>Open Firewall and restore your last backup.</li></ol>
+    <h2>Pro is missing on a new phone</h2>
+    <ol><li>Sign in to Google Play with the account that bought it.</li><li>Open Firewall. Pro comes back on its own.</li></ol>
+    <h2>The subscription will not start</h2>
+    <p>Support And Live API runs through the Google Play app. A copy not installed from Google Play, an old Play Store, or no account on the phone cannot reach it.</p>
+    <ol><li>Open the Play Store once and check you are signed in.</li><li>Update Firewall and the Play Store.</li><li>Try the row again in Settings, under Support the developer.</li></ol>
+    <p>To cancel: tap the same row, or Play Store, your profile, Payments and subscriptions.</p>
     </article>'''
 
 REPORT = f'''    <p class="kicker">Report</p>
@@ -182,8 +254,10 @@ bad = 0
 for (file, title), desc, body in zip(PAGES,
         ['The user guide for Firewall, the no root firewall for Android with tracker blocking and DNS over HTTPS.',
          'How to use Firewall: app modes, domain rules, tracker lists, encrypted lookups, activity, alerts, data caps and settings.',
+         'Short Firewall recipes: stop trackers, keep an app off mobile data, safe search, quiet nights, data caps and more.',
+         'When something in Firewall goes wrong: a broken app, the VPN turning off, an empty Activity, the Kill switch, Pro and the subscription.',
          'Answers to common questions about Firewall.', 'How to report a Firewall bug or ask for a feature.'],
-        [INDEX, GUIDE, FAQ, REPORT]):
+        [INDEX, GUIDE, COOKBOOK, RUNBOOK, FAQ, REPORT]):
     html = shell(file, title, desc, body)
     text = re.sub(r'<[^>]+>', ' ', html)
     for m in re.finditer(r'\s[-–—]\s|–|—', text):

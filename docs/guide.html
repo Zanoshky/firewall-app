@@ -16,7 +16,7 @@
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="index.html"><img src="img/icon-192.png" alt="" width="34" height="34"><span>Firewall</span></a>
-    <nav aria-label="Guide pages"><a href="index.html">Home</a><a href="guide.html" aria-current="page">Guide</a><a href="faq.html">Questions</a><a href="report.html">Report a bug</a></nav>
+    <nav aria-label="Guide pages"><a href="index.html">Home</a><a href="guide.html" aria-current="page">Guide</a><a href="cookbook.html">Cookbook</a><a href="runbook.html">Runbook</a><a href="faq.html">Questions</a><a href="report.html">Report a bug</a></nav>
   </div>
 </header>
 <main id="main" class="page">
@@ -42,6 +42,8 @@
     <p>In Settings, under Protection. Every lookup is checked against known tracker, ad and fingerprinting domains. The bundled list works out of the box. With Pro you can add the community lists (HaGeZi, OISD, 1Hosts, Steven Black, AdGuard), refresh them, or add your own list by its https link: a hosts file, a plain list of domains, or an adblock style list. Lists are downloaded once and kept on the phone; the page shows how many names they hold and the memory they take. Anything a list gets wrong can be undone with an allow rule in Your domain rules.</p>
     <h2>Encrypted lookups (DNS over HTTPS)</h2>
     <p>In Settings, under Protection. Plain DNS shows your network every site you open. DNS over HTTPS encrypts the lookups. Google is free. With Pro you can pick Cloudflare, Quad9 or AdGuard, or type the address of any provider; Firewall tries a real lookup before it saves it. If the provider cannot be reached, Firewall falls back to the network's own resolver rather than leaving you with no answer.</p>
+    <h2>Forced SafeSearch</h2>
+    <p>In Settings, under Encrypted lookups. Google, Bing and DuckDuckGo always show their SafeSearch results, and YouTube runs in Restricted Mode, in every app the firewall filters. A browser with its own Secure DNS turned on asks its own server and gets past this, so turn that off in the browser too. Free.</p>
     <h2>Activity</h2>
     <p>Lookups seen, how many were stopped, what share were encrypted, and what did the stopping: a tracker list, your own rules, or a blocked app. The chart of the last 24 hours, the names blocked most often, and the full log, searchable, with the app behind every entry. Tap an entry to block that domain, or to always allow it. When the app itself was blocked, the entry offers to allow the app.</p>
     <p>Pro adds the chart of the last 7 days (30 days when you keep a longer history), your busiest hours of the day, the apps that look up the most, the tracker companies behind them, and Export CSV.</p>
@@ -75,11 +77,13 @@
       <dt>Backup and restore</dt><dd>Saves how each app is handled, your domain rules, which tracker lists you downloaded, and your tracker and encryption settings, as plain JSON. Your passcode, your activity and your counters are never included. Restore here or on another phone.</dd>
       <dt>Privacy</dt><dd>Its own page. Firewall's promises (no ads, no tracking, no analytics, no account, no AI), then every permission it asks for and why. Location, contacts, camera and microphone are never asked for.</dd>
       <dt>Help and feedback</dt><dd>Its own page, with links to this guide and to the form to report a bug or ask for a feature.</dd>
-      <dt>Support the developer</dt><dd>If Firewall helps you, you can support it: Buy me a coffee opens the page in your browser.</dd>
+      <dt>Support the developer</dt><dd>If Firewall helps you, you can support it: Buy me a coffee opens the page in your browser. Support And Live API is an optional subscription, 0.99 a month through Google Play, that pays for bug fixes and fresh tracker lists. It unlocks nothing, and nothing is locked without it. Once you subscribe, the row says thank you and opens Google Play, where you cancel any time.</dd>
       <dt>About</dt><dd>The version you have, and that Firewall has no server of its own.</dd>
     </dl>
     <h2>Always on</h2>
     <p>Firewall starts again after a reboot and after an app update. The Quick Settings tile switches it from the notification shade, and respects App Lock. The Firewall status widget shows whether protection is on and what was stopped today.</p>
+    <h2>Languages, TV and big screens</h2>
+    <p>Firewall speaks English, German, Spanish, French, Hindi, Indonesian, Japanese, Korean, Brazilian Portuguese, Russian and Turkish. It follows the phone, or pick a language for Firewall alone in Android's settings, Apps, Firewall, Language. It runs on Android TV and Google TV with the remote, and uses two columns on a tablet.</p>
     <h2>Firewall Pro</h2>
     <p>One payment on Google Play, no subscription, no account. It stays with your Google account. If you used Firewall before Pro existed, Pro is already yours, for free.</p>
     </article>
