@@ -144,6 +144,9 @@ FAQ = '''    <p class="kicker">Questions</p>
     <p>Firewall needs Usage access to read Android's data counts. Open the app's page, tap the cap row and follow the button to Usage access, then turn Firewall on in that list. Caps count mobile data only.</p>
     <h2>I bought Pro on another phone</h2>
     <p>Sign in to Google Play with the same account and open Firewall. Pro comes back on its own.</p>
+
+    <h2>What is Support And Live API?</h2>
+    <p>An optional subscription, 0.99 USD or EUR a month, for those who want to help more. It pays for bug fixes and fresh tracker lists. It unlocks nothing, and nothing is locked without it. Find it in Settings, under Support the developer. Cancel any time in Google Play.</p>
     <h2>Does Firewall send my data anywhere?</h2>
     <p>No. There is no account, no analytics and no server of ours. Lookups you allow go to the DNS provider you chose, as they would without the app. See the <a href="https://firewall.zanoski.com/privacy">privacy policy</a>.</p>
     </article>'''
