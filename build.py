@@ -59,6 +59,14 @@ INDEX = f'''    <p class="kicker">User guide</p>
       {shot("domains", "Your domain rules: a block list holding graph.facebook.com and tiktok.com, 2 of 3 free rules used.", "Your domain rules")}
       {shot("trackers", "Tracker lists: tracker blocking on with 129 names loaded, 848 blocked, and the memory the lists take.", "Tracker lists")}
     </div>
+    <h2>New in 1.55</h2>
+    <ul>
+      <li>Insider, the optional monthly plan, brings new features first, reads your reports first and adds a mark in About.</li>
+      <li>Firewall says when it is not filtering: Home, the notification and the widget read Not filtering while Private DNS sends lookups past it, and a notice tells you when Android stopped it.</li>
+      <li>Domain rules take names in any script, and every place that adds a rule counts toward the 3 free ones.</li>
+      <li>Another app, such as Netglow, our network scanner, can ask Firewall to block an app. Firewall asks you first.</li>
+      <li>Block lists use far less memory, long DNS answers work again, and Greek, Cyrillic, Vietnamese and more letters show in the app's own fonts.</li>
+    </ul>
     <div class="cta">
       <a class="btn main" href="guide.html">Read the guide</a>
       <a class="btn" href="report.html">Report a bug or ask for a feature</a>
@@ -79,8 +87,8 @@ GUIDE = '''    <p class="kicker">Guide</p>
     </dl>
     <p>Changes take effect at once, but an app that is already running can hold on to what it opened earlier, so close and reopen it. Change all sets every app in the list you are looking at, and Undo puts each one back. Apps that went online lately are at the top. Tap an app's row for its own page: what it looked up, which tracker companies it reached, and whether they got through.</p>
     <h2>Your domain rules</h2>
-    <p>In Settings, under Protection. A block list and an allow list for ordinary websites, separate from the tracker lists. A rule covers the domain and everything under it, so blocking google.com also blocks www.google.com and mail.google.com. The more specific rule wins, so you can block a domain and allow one name inside it. Rules apply at once, for every app set to Filtered.</p>
-    <p>Free: 3 rules, block and allow together. Pro: as many as you like, and wildcards. A star anywhere else, like <code>ads.*</code> or <code>*tracker*</code>, matches any text in its place.</p>
+    <p>In Settings, under Protection. A block list and an allow list for ordinary websites, separate from the tracker lists. A rule covers the domain and everything under it, so blocking google.com also blocks www.google.com and mail.google.com. The more specific rule wins, so you can block a domain and allow one name inside it. Rules apply at once, for every app set to Filtered. Names in any script work, like bücher.de; a name can be up to 253 characters.</p>
+    <p>Free: 3 rules, block and allow together, whether you add them here, from Activity or from an app's page. Pro: as many as you like, and wildcards. A star anywhere else, like <code>ads.*</code> or <code>*tracker*</code>, matches any text in its place.</p>
     <h2>Tracker lists</h2>
     <p>In Settings, under Protection. Every lookup is checked against known tracker, ad and fingerprinting domains. The bundled list works out of the box. With Pro you can add the community lists (HaGeZi, OISD, 1Hosts, Steven Black, AdGuard), refresh them, or add your own list by its https link: a hosts file, a plain list of domains, or an adblock style list. Lists are downloaded once and kept on the phone; the page shows how many names they hold and the memory they take. Anything a list gets wrong can be undone with an allow rule in Your domain rules.</p>
     <h2>Encrypted lookups (DNS over HTTPS)</h2>
@@ -125,8 +133,11 @@ GUIDE = '''    <p class="kicker">Guide</p>
     </dl>
     <h2>Always on</h2>
     <p>Firewall starts again after a reboot and after an app update. The Quick Settings tile switches it from the notification shade, and respects App Lock. The Firewall status widget shows whether protection is on and what was stopped today.</p>
+    <p>Firewall never claims to protect you when it does not. While Private DNS sends lookups straight to its provider, Home, the notification and the widget say Not filtering; tap to fix it. If Android stops the firewall and it cannot come back, the switch goes off and a Firewall stopped notice asks you to turn it on again.</p>
+    <h2>Requests from other apps</h2>
+    <p>Netglow, our network scanner, runs no VPN of its own, so it asks Firewall. Any app may ask Firewall to block an app, but Firewall shows its own dialog first and nothing changes until you say yes. A request can only block, never let an app out again; change it back under Apps. While the firewall runs, Netglow can read the connection log, read only. No other app can, and Firewall checks Netglow by its name and its Google Play signature.</p>
     <h2>Languages, TV and big screens</h2>
-    <p>Firewall speaks English, German, Spanish, French, Hindi, Indonesian, Japanese, Korean, Brazilian Portuguese, Russian and Turkish. It follows the phone, or pick a language for Firewall alone in Android's settings, Apps, Firewall, Language. It runs on Android TV and Google TV with the remote, and uses two columns on a tablet.</p>
+    <p>Firewall speaks English, German, Spanish, French, Hindi, Indonesian, Japanese, Korean, Brazilian Portuguese, Russian and Turkish. It follows the phone, or pick a language for Firewall alone in Android's settings, Apps, Firewall, Language. Greek, Cyrillic, Vietnamese and other accented letters show in the app's own fonts. It runs on Android TV and Google TV with the remote, and uses two columns on a tablet.</p>
     <h2>Firewall Pro</h2>
     <p>One payment on Google Play, no subscription, no account. It stays with your Google account. If you used Firewall before Pro existed, Pro is already yours, for free.</p>
     </article>'''
@@ -141,7 +152,13 @@ FAQ = '''    <p class="kicker">Questions</p>
     <h2>It says Private DNS is in the way</h2>
     <p>With Private DNS set to a provider, Android sends every lookup straight there and the firewall never sees them. Tap the warning: Firewall can switch Private DNS to Automatic while it runs and put your setting back when you turn it off, or you can set it to Automatic or Off yourself under Network and internet. Turn on DNS over HTTPS in Firewall to keep lookups encrypted.</p>
     <h2>The firewall turned itself off</h2>
-    <p>Android allows one VPN at a time. Starting another VPN app stops Firewall; switch it back on when you are done.</p>
+    <p>Android allows one VPN at a time. Starting another VPN app stops Firewall; switch it back on when you are done. If Android stopped it, a Firewall stopped notice says so; tap it to turn the firewall back on.</p>
+    <h2>Home says Not filtering</h2>
+    <p>Private DNS is set to a provider, so lookups go past the firewall. Tap the warning and let Firewall move Private DNS aside while it runs.</p>
+    <h2>I am uninstalling Firewall</h2>
+    <p>Turn the firewall off first, so it puts your Private DNS setting back. If you uninstall it while it runs, set Private DNS back yourself under Network and internet.</p>
+    <h2>Another app asked me to block an app</h2>
+    <p>Apps like Netglow can ask Firewall to block an app. Firewall asks you in its own dialog, and a request can never unblock anything. Say no and nothing changes.</p>
     <h2>Does it drain the battery?</h2>
     <p>Very little. Only the names your phone looks up pass through the app, never your traffic itself.</p>
     <h2>The data cap shows no data used</h2>
@@ -196,7 +213,7 @@ RUNBOOK = '''    <p class="kicker">Runbook</p>
     <h2>Firewall turned itself off</h2>
     <p>Android allows one VPN at a time, so another VPN app stops Firewall. Some phones also stop apps in the background to save battery.</p>
     <ol><li>Switch it back on from Home or the Quick Settings tile.</li><li>Android settings, Apps, Firewall, Battery: pick Unrestricted.</li><li>Network and internet, VPN, Firewall: turn on Always on VPN.</li></ol>
-    <h2>Nothing shows in Activity</h2>
+    <h2>Nothing shows in Activity, or Home says Not filtering</h2>
     <p>With Private DNS set to a provider, Android sends lookups straight there and Firewall never sees them.</p>
     <ol><li>Tap the Private DNS warning on Home.</li><li>Let Firewall switch it to Automatic while it runs, or set it yourself under Network and internet.</li></ol>
     <h2>A blocked app still gets online</h2>
