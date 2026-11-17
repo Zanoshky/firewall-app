@@ -147,8 +147,8 @@ GUIDE = '''    <p class="kicker">Guide</p>
     <p>Firewall never claims to protect you when it does not. While Private DNS sends lookups straight to its provider, Home, the notification and the widget say Not filtering; tap to fix it. If Android stops the firewall and it cannot come back, the switch goes off and a Firewall stopped notice asks you to turn it on again.</p>
     <h2>Requests from other apps</h2>
     <p>Netglow, our network scanner, runs no VPN of its own, so it asks Firewall. Any app may ask Firewall to block an app, but Firewall shows its own dialog first and nothing changes until you say yes. A request can only block, never let an app out again; change it back under Apps. While the firewall runs, Netglow can read the connection log, read only. No other app can, and Firewall checks Netglow by its name and its Google Play signature.</p>
-    <h2>Languages, TV and big screens</h2>
-    <p>Firewall speaks English, German, Spanish, French, Hindi, Indonesian, Japanese, Korean, Brazilian Portuguese, Russian and Turkish. It follows the phone, or pick a language for Firewall alone in Android's settings, Apps, Firewall, Language. Greek, Cyrillic, Vietnamese and other accented letters show in the app's own fonts. It runs on Android TV and Google TV with the remote, and uses two columns on a tablet.</p>
+    <h2>Languages and big screens</h2>
+    <p>Firewall speaks English, German, Spanish, French, Hindi, Indonesian, Japanese, Korean, Brazilian Portuguese, Russian and Turkish. It follows the phone, or pick a language for Firewall alone in Android's settings, Apps, Firewall, Language. Greek, Cyrillic, Vietnamese and other accented letters show in the app's own fonts. It uses two columns on a tablet.</p>
     <h2>Firewall Pro</h2>
     <p>One payment on Google Play, no subscription, no account. It stays with your Google account. If you used Firewall before Pro existed, Pro is already yours, for free.</p>
     </article>'''
