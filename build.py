@@ -110,6 +110,17 @@ GUIDE = '''    <p class="kicker">Guide</p>
     <p>In Settings, under Protection. Normally Firewall stops a Blocked app by refusing every name it looks up. A few apps get past that by connecting straight to an address. With the Kill switch on, Android itself cuts a Blocked app off, so it cannot reach the internet at all, and a connection it already had stops at once. Filtered and Not filtered apps are not touched, and it costs no battery.</p>
     <p>It needs Android 13 or newer and Shizuku, a free helper app. Android only lets its own system tools switch another app's internet off; Shizuku lends Firewall that one power without rooting the phone. Turn the switch on and the page shows one step at a time: get Shizuku, start it, allow Firewall. After a phone restart, open Shizuku and tap Start once; Firewall reminds you. Until then Blocked works the normal way.</p>
     <p>Turning the Kill switch or the firewall off gives every app its connection back. A few parts of the phone are never cut off this way: Firewall and Shizuku, the network stack, calls, Settings, the launcher and Google Play services. An app that came with the phone is only cut off if you blocked it yourself. Shizuku also lets Firewall handle strict Private DNS without the adb command.</p>
+    <h2>DNS through Tor (Pro)</h2>
+    <p>Your encrypted lookups normally go to the provider you picked, and it sees which phone asks. With DNS through Tor they travel through Orbot, the free Tor app, so the provider sees Tor and not you. It hides who is asking from your DNS provider and your network. It does not hide the connections your apps make themselves. The first lookups can take a few seconds while Tor builds a circuit.</p>
+    <p>Set it up once, in this order. The Pro tour in Settings shows each step and ticks it only when your phone proves it.</p>
+    <ol>
+      <li>Install Orbot from Google Play (F-Droid has it too).</li>
+      <li>Open Orbot, then its Settings, General, and turn on Power User Mode. This matters: without it Orbot takes over the phone's one VPN slot and Firewall stops.</li>
+      <li>In the same General settings, turn on Start Orbot on Boot, so it comes back after a restart.</li>
+      <li>On the Orbot start screen leave the transport on Direct Connection (or Smart Connect), tap Connect and wait for Connected.</li>
+      <li>In Firewall, make sure Encrypted lookups is on, then open Settings, DNS rules and turn on Send encrypted lookups through Tor.</li>
+    </ol>
+    <p>Refuse lookups if Tor is down decides what happens when Orbot stops. On, no lookup is answered until Orbot is back, so nothing leaks to your provider. Off, Firewall falls back to the normal encrypted path. Check Orbot on the same page tells you if Tor is reachable. If Orbot is not running, the Pro tour shows an amber mark with what to do. Also set Orbot's battery to Unrestricted in Android settings, so Android does not stop it.</p>
     <h2>Wi-Fi, mobile data and roaming</h2>
     <p>Open an app from the Apps list. Under Can connect on there are three tiles: Wi-Fi, Mobile data and Roaming. Tap one to block or allow the app on that network. An app blocked on mobile data shows Wi-Fi only on the Apps list. Roaming counts as mobile data too, so an app blocked on mobile data is also blocked while roaming. The rule works for Filtered and Not filtered apps alike. Free.</p>
     <h2>Data used</h2>
@@ -195,6 +206,9 @@ COOKBOOK = '''    <p class="kicker">Cookbook</p>
     <h2>Cut an app off completely (Pro)</h2>
     <ol><li>Set the app to Blocked.</li><li>Open Settings, Kill switch, and follow the steps: get Shizuku, start it, allow Firewall.</li></ol>
     <p>Needs Android 13 or newer. After a restart, open Shizuku and tap Start once.</p>
+    <h2>Send lookups through Tor (Pro)</h2>
+    <ol><li>Install Orbot, open its Settings, General and turn on Power User Mode and Start Orbot on Boot.</li><li>Tap Connect in Orbot and wait for Connected.</li><li>In Firewall, turn on Encrypted lookups, then Settings, DNS rules, Send encrypted lookups through Tor.</li></ol>
+    <p>The Pro tour in Settings checks every step for you.</p>
     <h2>Your rules on a new phone</h2>
     <ol><li>On the old phone, Settings, Backup and restore, save a backup.</li><li>Copy the file to the new phone.</li><li>On the new phone, Backup and restore, Restore from file.</li></ol>
     <p>Your passcode and your activity are never in the backup.</p>
@@ -223,6 +237,9 @@ RUNBOOK = '''    <p class="kicker">Runbook</p>
     <p>Shizuku has to be started again after every restart; Firewall reminds you.</p>
     <ol><li>Open Shizuku and tap Start.</li></ol>
     <p>Until then, Blocked works the normal way.</p>
+    <h2>The Tor row says Orbot is not running</h2>
+    <p>Orbot stops when the phone restarts, unless Start Orbot on Boot is on. While Refuse lookups if Tor is down is on, no name is answered until it is back.</p>
+    <ol><li>Open Orbot and tap Connect, then wait for Connected.</li><li>In Orbot, Settings, General: turn on Power User Mode and Start Orbot on Boot.</li><li>If Firewall stops when Orbot connects, Power User Mode is off: Orbot is using the VPN slot.</li></ol>
     <h2>Data used or a cap shows nothing</h2>
     <p>Firewall reads Android's own data counts, which need Usage access.</p>
     <ol><li>Open the app's page and tap Allow usage access.</li><li>Turn Firewall on in Android's list.</li></ol>
