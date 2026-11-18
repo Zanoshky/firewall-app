@@ -7,7 +7,7 @@
 <p align="center">A firewall for Android that needs no root, with tracker blocking, DNS over HTTPS, and a log of everything your phone looks up. Free, with an optional Pro.</p>
 
 <p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.zanoshky.firewall"><b>Google Play</b></a> ·
+  <a href="https://play.google.com/store/apps/details?id=com.zanoshky.firewall&amp;referrer=utm_source%3Dgithub_readme%26utm_medium%3Dreferral%26utm_campaign%3Dfirewall-2026-11"><b>Google Play</b></a> ·
   <a href="https://firewall.zanoski.com"><b>firewall.zanoski.com</b></a> ·
   <a href="https://zanoshky.github.io/firewall-app/"><b>User guide</b></a> ·
   <a href="https://github.com/Zanoshky/firewall-app/issues/new/choose"><b>Report a bug</b></a>

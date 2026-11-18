@@ -3,7 +3,7 @@ dash used as punctuation. python3 build.py"""
 import pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).parent / 'docs'
-PLAY = 'https://play.google.com/store/apps/details?id=com.zanoshky.firewall'
+PLAY = 'https://play.google.com/store/apps/details?id=com.zanoshky.firewall&amp;referrer=utm_source%3Dgithub_guide%26utm_medium%3Dreferral%26utm_campaign%3Dfirewall-2026-11'
 SITE = 'https://firewall.zanoski.com'
 REPO = 'https://github.com/Zanoshky/firewall-app'
 PAGES = [('index.html', 'Home'), ('guide.html', 'Guide'), ('cookbook.html', 'Cookbook'), ('runbook.html', 'Runbook'), ('faq.html', 'Questions'), ('report.html', 'Report a bug')]
