@@ -51,7 +51,7 @@ def shot(name, alt, cap):
 
 INDEX = f'''    <p class="kicker">User guide</p>
     <h1>Firewall</h1>
-    <p class="sub">A firewall for Android that needs no root, with tracker blocking, DNS over HTTPS, and a log of everything your phone looks up. You decide, app by app, what the firewall does with it. Free, with an optional Pro.</p>
+    <p class="sub">A firewall for Android that needs no root, with tracker blocking, DNS over HTTPS, and a log of everything your phone looks up. You decide, app by app, what the firewall does with it. Free, with an optional Pro and an optional Insider plan.</p>
     <div class="shots">
       {shot("apps", "The app list with lookups per app: Chrome, Calendar and Phosphor Filtered, Vinyl Blocked, and the bar at the bottom ending in Settings.", "Apps: Not filtered, Filtered or Blocked")}
       {shot("activity", "3.7K lookups, 1.0K blocked, 98% encrypted, and why lookups were stopped: tracker lists, your rules and blocked apps.", "Activity")}
@@ -59,9 +59,13 @@ INDEX = f'''    <p class="kicker">User guide</p>
       {shot("domains", "Your domain rules: a block list holding graph.facebook.com and tiktok.com, 2 of 3 free rules used.", "Your domain rules")}
       {shot("trackers", "Tracker lists: tracker blocking on with 129 names loaded, 848 blocked, and the memory the lists take.", "Tracker lists")}
     </div>
+    <h2>New in 1.77</h2>
+    <ul>
+      <li>Automation and Open doors moved from Pro to Insider. Pro owners no longer have them; Insider now gives Automation, Open doors, new features first, an Insider mark in About and your requests read first.</li>
+    </ul>
     <h2>New in 1.55</h2>
     <ul>
-      <li>Insider, the optional monthly plan, brings new features first, reads your reports first and adds a mark in About.</li>
+      <li>Insider, the optional monthly plan, brings new features first, reads your reports first and adds a mark in About (since 1.77 it also gives Automation and Open doors).</li>
       <li>Firewall says when it is not filtering: Home, the notification and the widget read Not filtering while Private DNS sends lookups past it, and a notice tells you when Android stopped it.</li>
       <li>Domain rules take names in any script, and every place that adds a rule counts toward the 3 free ones.</li>
       <li>Another app, such as Netglow, our network scanner, can ask Firewall to block an app. Firewall asks you first.</li>
@@ -133,6 +137,12 @@ GUIDE = '''    <p class="kicker">Guide</p>
     <p>In Settings, under Protection. With Block while the screen is off on, apps cannot go online while you are not using the phone. It starts 1 minute after the screen goes off, so a quick look at the clock changes nothing, and stops the moment the screen comes on. The apps under Stay online keep working: your phone app, your messages app and Google Play services, which carries notifications for every app. Add music or a messenger with Add an app. Free.</p>
     <h2>History</h2>
     <p>The log is kept on your phone for 7 days. With Pro you can keep 30 or 90 days, in Settings under History. Longer history uses more storage.</p>
+    <h2>Automation (Insider)</h2>
+    <p>In Settings, under Automation. It lets Tasker, MacroDroid or a shell script set one app's mode, for example Blocked while you are at work. Turn on Allow automation and Firewall shows a secret token; every request must carry it, and a request with the wrong token is ignored. Copy token and Copy the example with your token give you a ready command to paste into your automation app, and Make a new token stops the old one at once. The page also shows the last request and what became of it.</p>
+    <p>A request can only set an app's mode (Blocked, Filtered or Not filtered). It cannot read your log, change your rules or turn the firewall off. Automation is part of Insider; it was part of Pro until 1.77, so Pro alone no longer unlocks it.</p>
+    <h2>Open doors (Insider)</h2>
+    <p>In Settings, under Open doors. It shows which apps on this phone take connections from your Wi-Fi, and who each app talks to right now. It reads Android's socket tables through Shizuku, a free helper app, and looks again every 2 seconds while the page is open. Nothing leaves the phone and no name is looked up.</p>
+    <p>Listening on your Wi-Fi lists the open ports another device on the same Wi-Fi can try to connect to; risky ones, such as Android debugging, Telnet, FTP, file sharing, screen sharing, a remote login, a proxy or a database, are marked red with a line saying why. Talking right now lists live connections as numbers. Open doors is part of Insider; it was part of Pro until 1.77, so Pro alone no longer unlocks it.</p>
     <h2>Settings</h2>
     <p>Settings is the last button in the bar. It lists the pages below in groups: Look, Protection (Encrypted lookups, Tracker lists, Your domain rules, New apps, Screen off, Kill switch), Lock, alerts and backup, Pro, and App (Privacy, Help and feedback), then Support the developer and About.</p>
     <dl>
@@ -143,7 +153,7 @@ GUIDE = '''    <p class="kicker">Guide</p>
       <dt>Backup and restore</dt><dd>Saves how each app is handled, your domain rules, which tracker lists you downloaded, and your tracker and encryption settings, as plain JSON. Your passcode, your activity and your counters are never included. Restore here or on another phone.</dd>
       <dt>Privacy</dt><dd>Its own page. Firewall's promises (no ads, no tracking, no analytics, no account, no AI), then every permission it asks for and why. Location, contacts, camera and microphone are never asked for.</dd>
       <dt>Help and feedback</dt><dd>Its own page, with links to this guide and to the form to report a bug or ask for a feature.</dd>
-      <dt>Support the developer</dt><dd>If Firewall helps you, you can support it. Insider is an optional subscription, 0.99 a month through Google Play, that pays for bug fixes and fresh tracker lists. Insiders get new features before everyone else (each one opens to every user on a set date), their bug reports and ideas read first, and an Insider mark in About with their date. Nothing free or in Pro ever moves behind it. Once you subscribe, the row says thank you and opens Google Play, where you cancel any time.</dd>
+      <dt>Support the developer</dt><dd>If Firewall helps you, you can support it. Insider is an optional subscription, 0.99 a month through Google Play, that pays for bug fixes and fresh tracker lists. Insiders get Automation and Open doors, new features before everyone else (each one opens to every user on a set date), their bug reports and ideas read first, and an Insider mark in About with their date. Automation and Open doors used to be part of Pro and moved to Insider in 1.77; apart from those two, nothing free or in Pro moves behind it. Once you subscribe, the row says thank you and opens Google Play, where you cancel any time.</dd>
       <dt>About</dt><dd>The version you have, and that Firewall has no server of its own.</dd>
     </dl>
     <h2>Always on</h2>
@@ -182,7 +192,7 @@ FAQ = '''    <p class="kicker">Questions</p>
     <p>Sign in to Google Play with the same account and open Firewall. Pro comes back on its own.</p>
 
     <h2>What is Insider?</h2>
-    <p>An optional subscription, 0.99 USD or EUR a month, for those who want to help more. It pays for bug fixes and fresh tracker lists. Insiders get new features before everyone else (each one opens to every user on a set date), their bug reports and ideas read first, and an Insider mark in About with their date. Nothing free or in Pro ever moves behind it. Find it in Settings, under Support the developer. Cancel any time in Google Play.</p>
+    <p>An optional subscription, 0.99 USD or EUR a month, for those who want to help more. It pays for bug fixes and fresh tracker lists. Insiders get Automation and Open doors, new features before everyone else (each one opens to every user on a set date), their bug reports and ideas read first, and an Insider mark in About with their date. Automation and Open doors used to be part of Pro and moved to Insider in 1.77; apart from those two, nothing free or in Pro moves behind it. Find it in Settings, under Support the developer. Cancel any time in Google Play.</p>
     <h2>Does Firewall send my data anywhere?</h2>
     <p>No. There is no account, no analytics and no server of ours. Lookups you allow go to the DNS provider you chose, as they would without the app. See the <a href="https://firewall.zanoski.com/privacy">privacy policy</a>.</p>
     </article>'''
@@ -218,7 +228,7 @@ COOKBOOK = '''    <p class="kicker">Cookbook</p>
     <p>Your passcode and your activity are never in the backup.</p>
     <h2>Support Firewall monthly</h2>
     <ol><li>Open Settings and scroll to Support the developer.</li><li>Tap Insider.</li><li>Google Play shows the price and how to cancel. Confirm there.</li></ol>
-    <p>Optional. Insiders get new features first and their requests read first. Tap the row again to manage or cancel it.</p>
+    <p>Optional. Insiders get Automation and Open doors, new features first and their requests read first. Tap the row again to manage or cancel it.</p>
     </article>'''
 
 RUNBOOK = '''    <p class="kicker">Runbook</p>
