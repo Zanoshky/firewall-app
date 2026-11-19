@@ -61,11 +61,12 @@ INDEX = f'''    <p class="kicker">User guide</p>
     </div>
     <h2>New in 1.77</h2>
     <ul>
-      <li>Automation and Open doors moved from Pro to Insider. Pro owners no longer have them; Insider now gives Automation, Open doors, new features first, an Insider mark in About and your requests read first.</li>
+      <li>No VPN mode moved from Pro to Insider too (1.78). Pro owners no longer have it; if Insider ends while it is on, No VPN mode and the firewall switch off, and you turn the firewall on again from Home.</li>
+      <li>Automation and Open doors moved from Pro to Insider. Pro owners no longer have them; Insider now gives Automation, Open doors, No VPN mode, new features first, an Insider mark in About and your requests read first.</li>
     </ul>
     <h2>New in 1.55</h2>
     <ul>
-      <li>Insider, the optional monthly plan, brings new features first, reads your reports first and adds a mark in About (since 1.77 it also gives Automation and Open doors).</li>
+      <li>Insider, the optional monthly plan, brings new features first, reads your reports first and adds a mark in About (since 1.77 it also gives Automation and Open doors, and since 1.78 No VPN mode).</li>
       <li>Firewall says when it is not filtering: Home, the notification and the widget read Not filtering while Private DNS sends lookups past it, and a notice tells you when Android stopped it.</li>
       <li>Domain rules take names in any script, and every place that adds a rule counts toward the 3 free ones.</li>
       <li>Another app, such as Netglow, our network scanner, can ask Firewall to block an app. Firewall asks you first.</li>
@@ -114,7 +115,7 @@ GUIDE = '''    <p class="kicker">Guide</p>
     <p>In Settings, under Protection. Normally Firewall stops a Blocked app by refusing every name it looks up. A few apps get past that by connecting straight to an address. With the Kill switch on, Android itself cuts a Blocked app off, so it cannot reach the internet at all, and a connection it already had stops at once. Filtered and Not filtered apps are not touched, and it costs no battery.</p>
     <p>It needs Android 13 or newer and Shizuku, a free helper app. Android only lets its own system tools switch another app's internet off; Shizuku lends Firewall that one power without rooting the phone. Turn the switch on and the page shows one step at a time: get Shizuku, start it, allow Firewall. After a phone restart, open Shizuku and tap Start once; Firewall reminds you. Until then Blocked works the normal way.</p>
     <p>Turning the Kill switch or the firewall off gives every app its connection back. A few parts of the phone are never cut off this way: Firewall and Shizuku, the network stack, calls, Settings, the launcher and Google Play services. An app that came with the phone is only cut off if you blocked it yourself. Shizuku also lets Firewall handle strict Private DNS without the adb command.</p>
-    <h2>No VPN mode (Pro)</h2>
+    <h2>No VPN mode (Insider)</h2>
     <p>In Settings, under Protection, open Protection mode and pick Normal, Watch only or No VPN. In No VPN mode Firewall never starts its VPN, so your VPN slot stays free for another VPN app. Shizuku and Android's own firewall cut the apps you Blocked, the same way the Kill switch does, and the Kill switch turns on with it.</p>
     <p>Be clear about the trade: only whole apps can be cut. There is no name filtering, no tracker blocking, no domain rules and no Activity log, and Watch only, Screen off and DNS guard pause. The page shows one step at a time to get Shizuku running, and asks you to confirm before it starts.</p>
     <p>After a phone restart nothing is blocked until you open Shizuku and tap Start again; Firewall shows "No VPN mode paused" with a Fix button and posts a reminder, and the cut comes back on its own once Shizuku runs. Switch back to Normal at any time and the VPN returns.</p>
@@ -153,7 +154,7 @@ GUIDE = '''    <p class="kicker">Guide</p>
       <dt>Backup and restore</dt><dd>Saves how each app is handled, your domain rules, which tracker lists you downloaded, and your tracker and encryption settings, as plain JSON. Your passcode, your activity and your counters are never included. Restore here or on another phone.</dd>
       <dt>Privacy</dt><dd>Its own page. Firewall's promises (no ads, no tracking, no analytics, no account, no AI), then every permission it asks for and why. Location, contacts, camera and microphone are never asked for.</dd>
       <dt>Help and feedback</dt><dd>Its own page, with links to this guide and to the form to report a bug or ask for a feature.</dd>
-      <dt>Support the developer</dt><dd>If Firewall helps you, you can support it. Insider is an optional subscription, 0.99 a month through Google Play, that pays for bug fixes and fresh tracker lists. Insiders get Automation and Open doors, new features before everyone else (each one opens to every user on a set date), their bug reports and ideas read first, and an Insider mark in About with their date. Automation and Open doors used to be part of Pro and moved to Insider in 1.77; apart from those two, nothing free or in Pro moves behind it. Once you subscribe, the row says thank you and opens Google Play, where you cancel any time.</dd>
+      <dt>Support the developer</dt><dd>If Firewall helps you, you can support it. Insider is an optional subscription, 0.99 a month through Google Play, that pays for bug fixes and fresh tracker lists. Insiders get Automation, Open doors and No VPN mode, new features before everyone else (each one opens to every user on a set date), their bug reports and ideas read first, and an Insider mark in About with their date. Automation and Open doors used to be part of Pro and moved to Insider in 1.77, and No VPN mode followed in 1.78; apart from those three, nothing free or in Pro moves behind it. Once you subscribe, the row says thank you and opens Google Play, where you cancel any time.</dd>
       <dt>About</dt><dd>The version you have, and that Firewall has no server of its own.</dd>
     </dl>
     <h2>Always on</h2>
@@ -192,7 +193,7 @@ FAQ = '''    <p class="kicker">Questions</p>
     <p>Sign in to Google Play with the same account and open Firewall. Pro comes back on its own.</p>
 
     <h2>What is Insider?</h2>
-    <p>An optional subscription, 0.99 USD or EUR a month, for those who want to help more. It pays for bug fixes and fresh tracker lists. Insiders get Automation and Open doors, new features before everyone else (each one opens to every user on a set date), their bug reports and ideas read first, and an Insider mark in About with their date. Automation and Open doors used to be part of Pro and moved to Insider in 1.77; apart from those two, nothing free or in Pro moves behind it. Find it in Settings, under Support the developer. Cancel any time in Google Play.</p>
+    <p>An optional subscription, 0.99 USD or EUR a month, for those who want to help more. It pays for bug fixes and fresh tracker lists. Insiders get Automation, Open doors and No VPN mode, new features before everyone else (each one opens to every user on a set date), their bug reports and ideas read first, and an Insider mark in About with their date. Automation and Open doors used to be part of Pro and moved to Insider in 1.77, and No VPN mode followed in 1.78; apart from those three, nothing free or in Pro moves behind it. Find it in Settings, under Support the developer. Cancel any time in Google Play.</p>
     <h2>Does Firewall send my data anywhere?</h2>
     <p>No. There is no account, no analytics and no server of ours. Lookups you allow go to the DNS provider you chose, as they would without the app. See the <a href="https://firewall.zanoski.com/privacy">privacy policy</a>.</p>
     </article>'''
@@ -228,7 +229,7 @@ COOKBOOK = '''    <p class="kicker">Cookbook</p>
     <p>Your passcode and your activity are never in the backup.</p>
     <h2>Support Firewall monthly</h2>
     <ol><li>Open Settings and scroll to Support the developer.</li><li>Tap Insider.</li><li>Google Play shows the price and how to cancel. Confirm there.</li></ol>
-    <p>Optional. Insiders get Automation and Open doors, new features first and their requests read first. Tap the row again to manage or cancel it.</p>
+    <p>Optional. Insiders get Automation, Open doors and No VPN mode, new features first and their requests read first. Tap the row again to manage or cancel it.</p>
     </article>'''
 
 RUNBOOK = '''    <p class="kicker">Runbook</p>
