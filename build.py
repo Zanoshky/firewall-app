@@ -59,6 +59,13 @@ INDEX = f'''    <p class="kicker">User guide</p>
       {shot("domains", "Your domain rules: a block list holding graph.facebook.com and tiktok.com, 2 of 3 free rules used.", "Your domain rules")}
       {shot("trackers", "Tracker lists: tracker blocking on with 129 names loaded, 848 blocked, and the memory the lists take.", "Tracker lists")}
     </div>
+    <h2>New in 1.98</h2>
+    <ul>
+      <li>Self check, in Settings under Help: Firewall looks at its own setup and says in plain words what could stop it from working. In No VPN mode it says which parts of Firewall that mode does not use.</li>
+      <li>The widget draws a ring of how many of today's lookups were stopped, is four cells wide, and the Quick Settings tile says Protected, Watch only, Not filtering or Off under its name. Settings has an Add to Quick Settings row.</li>
+      <li>A downloaded tracker list that is two weeks old or more now says it is older than it should be.</li>
+      <li>Automation can turn the firewall on again from Tasker.</li>
+    </ul>
     <h2>New in 1.91</h2>
     <ul>
       <li>A Setup guide in Settings that checks each step on the phone as you read, and a Pro tour that does the same for the Pro features.</li>
@@ -133,7 +140,7 @@ GUIDE = '''    <p class="kicker">Guide</p>
     <p>Turning the Kill switch or the firewall off gives every app its connection back. A few parts of the phone are never cut off this way: Firewall and Shizuku, the network stack, calls, Settings, the launcher and Google Play services. An app that came with the phone is only cut off if you blocked it yourself. Shizuku also lets Firewall handle strict Private DNS without the adb command.</p>
     <h2>No VPN mode (Insider)</h2>
     <p>In Settings, under Protection, open Protection mode and pick Normal, Watch only or No VPN. In No VPN mode Firewall never starts its VPN, so your VPN slot stays free for another VPN app. Shizuku and Android's own firewall cut the apps you Blocked, the same way the Kill switch does, and the Kill switch turns on with it.</p>
-    <p>Be clear about the trade: only whole apps can be cut. There is no name filtering, no tracker blocking, no domain rules and no Activity log, and Watch only, Screen off and DNS guard pause. The page shows one step at a time to get Shizuku running, and asks you to confirm before it starts.</p>
+    <p>Self check in this mode says so plainly: tracker lists, encrypted lookups and Private DNS are not used, and it sends no test lookup. Be clear about the trade: only whole apps can be cut. There is no name filtering, no tracker blocking, no domain rules and no Activity log, and Watch only, Screen off and DNS guard pause. The page shows one step at a time to get Shizuku running, and asks you to confirm before it starts.</p>
     <p>After a phone restart nothing is blocked until you open Shizuku and tap Start again; Firewall shows "No VPN mode paused" with a Fix button and posts a reminder, and the cut comes back on its own once Shizuku runs. Switch back to Normal at any time and the VPN returns.</p>
     <h2>DNS through Tor (Pro)</h2>
     <p>Your encrypted lookups normally go to the provider you picked, and it sees which phone asks. With DNS through Tor they travel through Orbot, the free Tor app, so the provider sees Tor and not you. It hides who is asking from your DNS provider and your network. It does not hide the connections your apps make themselves. The first lookups can take a few seconds while Tor builds a circuit.</p>
@@ -171,7 +178,9 @@ GUIDE = '''    <p class="kicker">Guide</p>
       <dt>Weekly summary (Pro)</dt><dd>Once a week, a notification with what the firewall stopped and which tracker companies your apps went for.</dd>
       <dt>Backup and restore</dt><dd>Saves how each app is handled, your domain rules, which tracker lists you downloaded, and your tracker and encryption settings, as plain JSON. Your passcode, your activity and your counters are never included. Restore here or on another phone.</dd>
       <dt>Privacy</dt><dd>Its own page. Firewall's promises (no ads, no tracking, no analytics, no account, no AI), then every permission it asks for and why. Location, contacts, camera and microphone are never asked for.</dd>
-      <dt>Add the widget</dt><dd>Pins the Firewall status widget to your home screen. If your launcher cannot add it from here, touch and hold an empty spot on the home screen, tap Widgets, then pick Firewall.</dd>
+      <dt>Add to Quick Settings</dt><dd>Android asks you to confirm, then the Firewall tile turns the firewall on or off from the swipe down panel and says its state under its name. Before Android 13 the page shows the manual way: swipe down twice, tap the pencil and drag Firewall into your tiles.</dd>
+      <dt>Add the widget</dt><dd>Pins the Firewall status widget to your home screen. It draws a ring of how many of today's lookups were stopped, with the count inside, and one key to turn the firewall on or off. If your launcher cannot add it from here, touch and hold an empty spot on the home screen, tap Widgets, then pick Firewall.</dd>
+      <dt>Self check</dt><dd>Under Help. One row for each thing that could stop Firewall from working: whether it runs (or Watch only, or No VPN mode), the VPN permission, another VPN holding the slot, notifications, battery saving, the tracker lists (and how old the newest downloaded one is), encrypted lookups, Private DNS and the Kill switch. Each row has a tick, a ban sign or an info sign. The only thing it sends out is one test lookup of example.com to your own DNS over HTTPS provider, and only when encrypted lookups are on and Tor is not carrying them. Copy result puts the rows on the clipboard for a support mail. It holds no domain, no app name and no address that was looked up.</dd>
       <dt>Help and feedback</dt><dd>Its own page, with links to this guide and to the form to report a bug or ask for a feature.</dd>
       <dt>Support the developer</dt><dd>If Firewall helps you, you can support it. Insider is an optional subscription, 0.99 a month through Google Play, that pays for bug fixes and fresh tracker lists. Insiders get Automation, Open doors, No VPN mode and Insights, new features before everyone else (each one opens to every user on a set date), their bug reports and ideas read first, and an Insider mark in About with their date. Automation and Open doors used to be part of Pro and moved to Insider in 1.77, and No VPN mode followed in 1.78; apart from those three, nothing free or in Pro moves behind it. Once you subscribe, the row says thank you and opens Google Play, where you cancel any time.</dd>
       <dt>About</dt><dd>The version you have, and that Firewall has no server of its own.</dd>
