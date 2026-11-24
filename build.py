@@ -59,6 +59,10 @@ INDEX = f'''    <p class="kicker">User guide</p>
       {shot("domains", "Your domain rules: a block list holding graph.facebook.com and tiktok.com, 2 of 3 free rules used.", "Your domain rules")}
       {shot("trackers", "Tracker lists: tracker blocking on with 129 names loaded, 848 blocked, and the memory the lists take.", "Tracker lists")}
     </div>
+    <h2>New in 1.101</h2>
+    <ul>
+      <li>Settings, Language: pick the language Firewall speaks, or follow the phone. It lists the 11 languages Firewall ships with and the 12 more that Google Play translates.</li>
+    </ul>
     <h2>New in 1.100</h2>
     <ul>
       <li>Kill switch: when another VPN app takes the VPN slot, your Blocked apps stay cut off and Firewall tells you with a notice and a line on Home.</li>
@@ -197,7 +201,7 @@ GUIDE = '''    <p class="kicker">Guide</p>
     <h2>Requests from other apps</h2>
     <p>Netglow, our network scanner, runs no VPN of its own, so it asks Firewall. Any app may ask Firewall to block an app, but Firewall shows its own dialog first and nothing changes until you say yes. A request can only block, never let an app out again; change it back under Apps. While the firewall runs, Netglow can read the connection log, read only. No other app can, and Firewall checks Netglow by its name and its Google Play signature.</p>
     <h2>Languages and big screens</h2>
-    <p>Firewall speaks English, German, Spanish, French, Hindi, Indonesian, Japanese, Korean, Brazilian Portuguese, Russian and Turkish. It follows the phone, or pick a language for Firewall alone in Android's settings, Apps, Firewall, Language. Greek, Cyrillic, Vietnamese and other accented letters show in the app's own fonts. It uses two columns on a tablet.</p>
+    <p>Firewall speaks English, German, Spanish, French, Hindi, Indonesian, Japanese, Korean, Brazilian Portuguese, Russian and Turkish. It follows the phone, or pick a language for Firewall alone in Settings, Language inside the app (Android's settings, Apps, Firewall, Language works too). From Google Play, Firewall also speaks Czech, Dutch, Greek, Hungarian, Italian, Polish, Romanian, Swedish, Thai, Ukrainian, Vietnamese and Simplified Chinese. Greek, Cyrillic, Vietnamese and other accented letters show in the app's own fonts. It uses two columns on a tablet.</p>
     <h2>Firewall Pro</h2>
     <p>One payment on Google Play, no subscription, no account. It stays with your Google account. If you used Firewall before Pro existed, Pro is already yours, for free.</p>
     </article>'''
