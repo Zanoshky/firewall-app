@@ -59,6 +59,10 @@ INDEX = f'''    <p class="kicker">User guide</p>
       {shot("domains", "Your domain rules: a block list holding graph.facebook.com and tiktok.com, 2 of 3 free rules used.", "Your domain rules")}
       {shot("trackers", "Tracker lists: tracker blocking on with 129 names loaded, 848 blocked, and the memory the lists take.", "Tracker lists")}
     </div>
+    <h2>New in 1.104</h2>
+    <ul>
+      <li>Smaller, easier to read titles at the top of every page.</li>
+    </ul>
     <h2>New in 1.103</h2>
     <ul>
       <li>Self check: every mark sits on a round circle in its own colour.</li>
