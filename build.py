@@ -59,6 +59,12 @@ INDEX = f'''    <p class="kicker">User guide</p>
       {shot("domains", "Your domain rules: a block list holding graph.facebook.com and tiktok.com, 2 of 3 free rules used.", "Your domain rules")}
       {shot("trackers", "Tracker lists: tracker blocking on with 129 names loaded, 848 blocked, and the memory the lists take.", "Tracker lists")}
     </div>
+    <h2>New in 1.115</h2>
+    <ul>
+      <li>With root, No VPN mode can filter lookups too: turn on Filter lookups and every app's lookups go through the tracker lists and your domain rules, without a VPN.</li>
+      <li>Activity names the app behind each lookup, so per app rules apply.</li>
+      <li>If Firewall stops, the phone's lookups go back to normal within seconds, so you are never left without the internet.</li>
+    </ul>
     <h2>New in 1.108</h2>
     <ul>
       <li>Settings is the gear at the top right, and Rules (Tracker lists and Your domain rules) has its own place in the bar.</li>
@@ -178,7 +184,9 @@ GUIDE = '''    <p class="kicker">Guide</p>
     <p>Turning the Kill switch or the firewall off gives every app its connection back. A few parts of the phone are never cut off this way: Firewall and Shizuku, the network stack, calls, Settings, the launcher and Google Play services. An app that came with the phone is only cut off if you blocked it yourself. Shizuku also lets Firewall handle strict Private DNS without the adb command.</p>
     <h2>No VPN mode (Insider)</h2>
     <p>In Settings, Protection, open How Firewall blocks and pick Normal, Watch only or No VPN. In No VPN mode Firewall never starts its VPN, so your VPN slot stays free for another VPN app. Shizuku or root and Android's own firewall cut the apps you Blocked, the same way the Kill switch does, and the Kill switch turns on with it. Root works as well as Shizuku.</p>
-    <p>Self check in this mode says so plainly: tracker lists, encrypted lookups and Private DNS are not used, and it sends no test lookup. Be clear about the trade: only whole apps can be cut. There is no name filtering, no tracker blocking, no domain rules and no Activity log, and Watch only, Screen off and DNS guard pause. The Allow the helper step in setup, or the page itself, shows one step at a time: Android 13 or newer, Get Shizuku, Start Shizuku and Allow Firewall (or root on a rooted phone), and then Switch to No VPN mode, which asks you to confirm before it starts.</p>
+    <p>Self check in this mode says so plainly: tracker lists, encrypted lookups and Private DNS are not used, and it sends no test lookup. Be clear about the trade: only whole apps can be cut. There is no name filtering, no tracker blocking, no domain rules and no Activity log, and Watch only, Screen off and DNS guard pause.</p>
+    <p>With root there is more: turn on Filter lookups on the No VPN page and every app's plain lookups go through Firewall's local resolver, so tracker lists and your domain rules work without a VPN, and Activity lists the latest lookups with the app behind each one. Filtered apps get the lists and rules, Not filtered apps are left alone. Apps with their own encrypted DNS, such as a browser with secure DNS, and Private DNS set to a provider name can still go around it; set Private DNS to Automatic. If Firewall stops, the redirect is taken out within seconds so lookups keep working.</p>
+    <p>The Allow the helper step in setup, or the page itself, shows one step at a time: Android 13 or newer, Get Shizuku, Start Shizuku and Allow Firewall (or root on a rooted phone), and then Switch to No VPN mode, which asks you to confirm before it starts.</p>
     <p>After a phone restart nothing is blocked until you open Shizuku and tap Start again; Firewall shows "No VPN mode paused" with a Fix button and posts a reminder, and the cut comes back on its own once Shizuku runs. Switch back to Normal at any time and the VPN returns.</p>
     <h2>DNS through Tor (Pro)</h2>
     <p>Your encrypted lookups normally go to the provider you picked, and it sees which phone asks. With DNS through Tor they travel through Orbot, the free Tor app, so the provider sees Tor and not you. It hides who is asking from your DNS provider and your network. It does not hide the connections your apps make themselves. The first lookups can take a few seconds while Tor builds a circuit.</p>
